@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 360px;
+            background-color: #333;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .display {
+            background-color: #222;
+            color: white;
+            font-size: 2.5rem;
+            text-align: right;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            background-color: #444;
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .button-zero {
+            grid-column: span 2;
+        }
+
+        .button-equal {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        .button-equal:hover {
+            background-color: #e64a19;
+        }
+
+        /* Responsive design */
+        @media (max-width: 400px) {
+            .calculator {
+                padding: 15px;
+            }
+
+            .display {
+                font-size: 2rem;
+                padding: 15px;
+            }
+
+            button {
+                padding: 15px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="inputField">0</div>
+        <div class="buttons">
+            <button onclick="clrAll()">C</button>
+            <button onclick="getValue('%')">%</button>
+            <button onclick="deleteChar()">CE</button>
+            <button onclick="getValue('/')">÷</button>
+
+            <button onclick="getValue(7)">7</button>
+            <button onclick="getValue(8)">8</button>
+            <button onclick="getValue(9)">9</button>
+            <button onclick="getValue('*')">×</button>
+
+            <button onclick="getValue(4)">4</button>
+            <button onclick="getValue(5)">5</button>
+            <button onclick="getValue(6)">6</button>
+            <button onclick="getValue('-')">-</button>
+
+            <button onclick="getValue(1)">1</button>
+            <button onclick="getValue(2)">2</button>
+            <button onclick="getValue(3)">3</button>
+            <button onclick="getValue('+')">+</button>
+
+            <button onclick="getValue(0)" class="button-zero">0</button>
+            <button onclick="getValue('.')">.</button>
+            <button onclick="equal()" class="button-equal">=</button>
+        </div>
+    </div>
+
+  
+<script src="app.js"></script>
+</body>
+</html>
